@@ -1,0 +1,502 @@
+:root {
+    --primary-color: #ff9a9e;
+    --secondary-color: #fecfef;
+    --bg-gradient: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    --card-bg: rgba(255, 255, 255, 0.6);
+    --text-color: #4a4a4a;
+    --highlight: #ff758c;
+    --success: #38ef7d;
+    --stale-color: #ff9f43;
+    --upcoming-color: #54a0ff;
+    --border-color: rgba(255, 255, 255, 0.8);
+    --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background: var(--bg-gradient);
+    background-attachment: fixed;
+    color: var(--text-color);
+    min-height: 100vh;
+    padding: 1rem 0.5rem; /* Mobile padding */
+}
+
+@media (min-width: 900px) {
+    body {
+        padding: 2rem 1rem;
+    }
+}
+
+.highlight {
+    color: var(--highlight);
+}
+
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.glass-panel {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+/* Header */
+.main-header {
+    text-align: center;
+    padding: 1.5rem 1rem;
+}
+
+.main-header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.main-header p {
+    font-size: 1rem;
+    color: #666;
+}
+
+@media (min-width: 900px) {
+    .main-header {
+        padding: 2rem;
+    }
+    .main-header h1 {
+        font-size: 2.5rem;
+    }
+    .main-header p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Content Layout */
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 900px) {
+    .content-wrapper {
+        grid-template-columns: 300px 1fr;
+        gap: 2rem;
+    }
+}
+
+/* Sidebar / Stats */
+.sidebar {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    /* Removed sticky for mobile so it scrolls naturally */
+}
+
+@media (min-width: 900px) {
+    .sidebar {
+        padding: 2rem;
+        position: sticky;
+        top: 2rem;
+        height: fit-content;
+    }
+}
+
+.chart-container {
+    position: relative;
+    width: 160px; /* Smaller for mobile */
+    height: 160px;
+}
+
+@media (min-width: 900px) {
+    .chart-container {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+.chart-center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--highlight);
+}
+
+.stats {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+
+.stat-box {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    padding: 0.8rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.stat-val {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.admin-link {
+    color: #999;
+    font-size: 0.9rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+    display: inline-block;
+    padding: 0.5rem; /* easier to tap */
+}
+
+.admin-link:hover {
+    color: var(--highlight);
+}
+
+/* Timetable List */
+.timetable-main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.section-title {
+    font-size: 1.3rem;
+    color: var(--highlight);
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+    padding-left: 0.5rem;
+}
+
+@media (min-width: 900px) {
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        padding-left: 0;
+    }
+}
+
+.timetable-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.day-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.2rem;
+    background: rgba(255,255,255,0.7);
+    border-radius: 20px;
+    border-left: 6px solid var(--primary-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.5s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    position: relative;
+}
+
+@media (min-width: 900px) {
+    .day-card {
+        padding: 1.5rem;
+    }
+}
+
+.day-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.day-card.today {
+    border-left-color: var(--highlight);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 0 2px var(--highlight), 0 8px 30px rgba(255, 117, 140, 0.2);
+}
+
+.day-card.stale {
+    border-left-color: var(--stale-color);
+}
+
+.day-card.upcoming {
+    border-left-color: var(--upcoming-color);
+}
+
+.day-card.completed-card {
+    border-left-color: var(--success) !important;
+    opacity: 0.6;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap; /* allow wrapping on super tiny screens */
+    gap: 0.5rem;
+}
+
+.date-info h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.date-info span {
+    font-size: 0.85rem;
+    color: #666;
+    background: var(--secondary-color);
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    margin-left: 0.5rem;
+    display: inline-block;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.subject-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 0.8rem;
+    border-radius: 12px;
+}
+
+.subjects {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+@media (min-width: 900px) {
+    .subjects {
+        font-size: 1.1rem;
+    }
+}
+
+/* Checkbox container */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    user-select: none;
+    /* Increase touch target size */
+    padding: 0.2rem;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    height: 32px; /* Bigger for mobile tapping */
+    width: 32px;
+    background-color: #eee;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+@media (min-width: 900px) {
+    .checkmark {
+        height: 28px;
+        width: 28px;
+    }
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: var(--success);
+}
+
+.checkmark:after {
+    content: "✔";
+    color: white;
+    display: none;
+    font-size: 16px;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Notes Section */
+.notes-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Stack on mobile */
+    gap: 0.5rem;
+}
+
+@media (min-width: 600px) {
+    .notes-container {
+        flex-direction: row;
+    }
+}
+
+.notes-input {
+    flex: 1;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    background: rgba(255,255,255,0.9);
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+}
+
+.notes-input:focus {
+    border-color: var(--highlight);
+}
+
+.btn-save {
+    background: var(--highlight);
+    color: white;
+    border: none;
+    padding: 1rem; /* Taller for mobile tapping */
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: transform 0.1s, background 0.2s;
+    width: 100%; /* Full width on mobile */
+}
+
+@media (min-width: 600px) {
+    .notes-input {
+        padding: 0.8rem 1rem;
+    }
+    .btn-save {
+        padding: 0 1.5rem;
+        width: auto;
+    }
+}
+
+.btn-save:hover {
+    background: #ff5e78;
+}
+
+.btn-save:active {
+    transform: scale(0.95);
+}
+
+/* Toast */
+.toast {
+    position: fixed;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--highlight);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 10px 30px rgba(255, 117, 140, 0.4);
+    transition: bottom 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 1000;
+    width: max-content;
+    max-width: 90%;
+    text-align: center;
+}
+
+.toast.show {
+    bottom: 20px;
+}
+
+/* Empty State Message */
+.all-caught-up {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    font-size: 1.2rem;
+    color: var(--success);
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+}
+
+/* Admin Login Overlay */
+.login-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--bg-gradient);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.login-overlay h2 {
+    font-size: 2rem;
+    color: var(--highlight);
+    text-align: center;
+}
+
+.login-overlay input {
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 1.1rem;
+    outline: none;
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+    background: rgba(255,255,255,0.8);
+}
+
+.login-overlay button {
+    padding: 1rem;
+    font-size: 1.1rem;
+    width: 100%;
+    max-width: 320px;
+    background: var(--highlight);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}

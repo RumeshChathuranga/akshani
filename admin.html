@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Akshani's Tracker</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    
+    <!-- Login Overlay -->
+    <div id="loginOverlay" class="login-overlay">
+        <h2>Admin Login</h2>
+        <input type="password" id="adminPassword" placeholder="Enter Password">
+        <button id="loginBtn" class="btn-save">Login</button>
+        <p id="loginError" style="color: red; display: none;">Incorrect Password</p>
+    </div>
+
+    <!-- Main Content (Hidden until login) -->
+    <div class="app-container" id="mainContent" style="display: none;">
+        <header class="glass-panel main-header">
+            <h1>Admin Dashboard <span class="highlight">👀</span></h1>
+            <p>Monitor Akshani's Progress (Read-Only)</p>
+        </header>
+
+        <div class="content-wrapper">
+            <aside class="sidebar glass-panel">
+                <div class="chart-container">
+                    <canvas id="progressChart"></canvas>
+                    <div class="chart-center-text" id="chartCenterText">0%</div>
+                </div>
+                <div class="stats">
+                    <div class="stat-box">
+                        <span class="stat-val" id="completedCount">0</span>
+                        <span class="stat-label">Days Done</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-val" id="remainingCount">35</span>
+                        <span class="stat-label">To Go</span>
+                    </div>
+                </div>
+                <div style="margin-top: 1rem; text-align: center;">
+                    <a href="index.html" class="btn-secondary" style="text-decoration: none;">Go to Student View</a>
+                </div>
+            </aside>
+
+            <main class="timetable-main">
+                <section class="task-section">
+                    <h2 class="section-title">Today 🎯</h2>
+                    <div id="todayList" class="timetable-list"></div>
+                </section>
+                
+                <section class="task-section">
+                    <h2 class="section-title" style="margin-top: 2rem;">Pending & Upcoming 📅</h2>
+                    <div id="pendingList" class="timetable-list"></div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="timetableData.js"></script>
+    <script src="db.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

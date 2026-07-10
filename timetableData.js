@@ -1,0 +1,41 @@
+const timetableData = [
+    { date: '2026-07-06', displayDate: 'Mon, Jul 6', type: 'Free Day', subjects: ['Biology', 'Chemistry'], week: 1 },
+    { date: '2026-07-07', displayDate: 'Tue, Jul 7', type: 'Class Day', subjects: ['Physics'], week: 1 },
+    { date: '2026-07-08', displayDate: 'Wed, Jul 8', type: 'Class Day', subjects: ['Biology'], week: 1 },
+    { date: '2026-07-09', displayDate: 'Thu, Jul 9', type: 'Free Day', subjects: ['Physics', 'Chemistry'], week: 1 },
+    { date: '2026-07-10', displayDate: 'Fri, Jul 10', type: 'Class Day', subjects: ['Biology'], week: 1 },
+    { date: '2026-07-11', displayDate: 'Sat, Jul 11', type: 'Free Day', subjects: ['Biology', 'Physics'], week: 1 },
+    { date: '2026-07-12', displayDate: 'Sun, Jul 12', type: 'Class Day', subjects: ['Chemistry'], week: 1 },
+
+    { date: '2026-07-13', displayDate: 'Mon, Jul 13', type: 'Free Day', subjects: ['Chemistry', 'Physics'], week: 2 },
+    { date: '2026-07-14', displayDate: 'Tue, Jul 14', type: 'Class Day', subjects: ['Biology'], week: 2 },
+    { date: '2026-07-15', displayDate: 'Wed, Jul 15', type: 'Class Day', subjects: ['Chemistry'], week: 2 },
+    { date: '2026-07-16', displayDate: 'Thu, Jul 16', type: 'Free Day', subjects: ['Biology', 'Chemistry'], week: 2 },
+    { date: '2026-07-17', displayDate: 'Fri, Jul 17', type: 'Class Day', subjects: ['Physics'], week: 2 },
+    { date: '2026-07-18', displayDate: 'Sat, Jul 18', type: 'Free Day', subjects: ['Biology', 'Physics'], week: 2 },
+    { date: '2026-07-19', displayDate: 'Sun, Jul 19', type: 'Class Day', subjects: ['Chemistry'], week: 2 },
+
+    { date: '2026-07-20', displayDate: 'Mon, Jul 20', type: 'Free Day', subjects: ['Biology', 'Chemistry'], week: 3 },
+    { date: '2026-07-21', displayDate: 'Tue, Jul 21', type: 'Class Day', subjects: ['Physics'], week: 3 },
+    { date: '2026-07-22', displayDate: 'Wed, Jul 22', type: 'Class Day', subjects: ['Biology'], week: 3 },
+    { date: '2026-07-23', displayDate: 'Thu, Jul 23', type: 'Free Day', subjects: ['Physics', 'Chemistry'], week: 3 },
+    { date: '2026-07-24', displayDate: 'Fri, Jul 24', type: 'Class Day', subjects: ['Biology'], week: 3 },
+    { date: '2026-07-25', displayDate: 'Sat, Jul 25', type: 'Free Day', subjects: ['Biology', 'Physics'], week: 3 },
+    { date: '2026-07-26', displayDate: 'Sun, Jul 26', type: 'Class Day', subjects: ['Chemistry'], week: 3 },
+
+    { date: '2026-07-27', displayDate: 'Mon, Jul 27', type: 'Free Day', subjects: ['Physics', 'Biology'], week: 4 },
+    { date: '2026-07-28', displayDate: 'Tue, Jul 28', type: 'Class Day', subjects: ['Chemistry'], week: 4 },
+    { date: '2026-07-29', displayDate: 'Wed, Jul 29', type: 'Class Day', subjects: ['Physics'], week: 4 },
+    { date: '2026-07-30', displayDate: 'Thu, Jul 30', type: 'Free Day', subjects: ['Chemistry', 'Physics'], week: 4 },
+    { date: '2026-07-31', displayDate: 'Fri, Jul 31', type: 'Class Day', subjects: ['Biology'], week: 4 },
+    { date: '2026-08-01', displayDate: 'Sat, Aug 1', type: 'Free Day', subjects: ['Biology', 'Chemistry'], week: 4 },
+    { date: '2026-08-02', displayDate: 'Sun, Aug 2', type: 'Class Day', subjects: ['Physics'], week: 4 },
+
+    { date: '2026-08-03', displayDate: 'Mon, Aug 3', type: 'Free Day', subjects: ['Biology', 'Chemistry'], week: 5 },
+    { date: '2026-08-04', displayDate: 'Tue, Aug 4', type: 'Class Day', subjects: ['Physics'], week: 5 },
+    { date: '2026-08-05', displayDate: 'Wed, Aug 5', type: 'Class Day', subjects: ['Biology'], week: 5 },
+    { date: '2026-08-06', displayDate: 'Thu, Aug 6', type: 'Free Day', subjects: ['Physics', 'Chemistry'], week: 5 },
+    { date: '2026-08-07', displayDate: 'Fri, Aug 7', type: 'Class Day', subjects: ['Biology'], week: 5 },
+    { date: '2026-08-08', displayDate: 'Sat, Aug 8', type: 'Free Day', subjects: ['Biology', 'Physics'], week: 5 },
+    { date: '2026-08-09', displayDate: 'Sun, Aug 9', type: 'Class Day', subjects: ['Chemistry'], week: 5 }
+];
