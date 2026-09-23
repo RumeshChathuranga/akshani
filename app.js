@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Render list
     renderTimetable();
 
-    // Initialize Chart
+    // Initializing
     initChart();
     updateStats();
     
